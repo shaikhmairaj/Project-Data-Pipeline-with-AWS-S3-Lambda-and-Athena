@@ -1,0 +1,21 @@
+Table Name: hw_data_cleaned
+
+Database: data_pipeline_db
+Location: s3://aws-data-bucket97/processed-data/
+
+Columns:
+---------------------------------------------------
+| Column Name      | Data Type     | Description  |
+---------------------------------------------------
+| Height             | INT           | Unique Heighgt of the record |
+| Weight             | STRING        | Weight of the body           |
+
+---------------------------------------------------
+
+
+
+Input Format: org.apache.hadoop.mapred.TextInputFormat
+Output Format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+Serde Library: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+
+Classification: parquet (or CSV depending on your format)
